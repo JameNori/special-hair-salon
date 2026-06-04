@@ -1,8 +1,6 @@
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
-
-dotenv.config();
+import pool from "../db/db.js";
 
 const app = express();
 
@@ -13,4 +11,14 @@ app.get("/", (req, res) => {
   res.json({ message: "Special Hair Salon API is running!" });
 });
 
+app.get("/test-db", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT NOW()");
+    console.log("result:", result);
+    res.json({ time: result.rows[0].now });
+  } catch (error) {
+    console.error("Database error:", error.message);
+    res.status(500).json({ errror: error.message });
+  }
+});
 export default app;
