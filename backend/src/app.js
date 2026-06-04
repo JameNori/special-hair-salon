@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import pool from "../db/db.js";
+import appointmentRouter from "./routes/appointmentRoutes.js";
 
 const app = express();
 
@@ -10,6 +11,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.json({ message: "Special Hair Salon API is running!" });
 });
+
+app.use("/appointments", appointmentRouter);
 
 app.get("/test-db", async (req, res) => {
   try {
