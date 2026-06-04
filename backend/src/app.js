@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import pool from "../db/db.js";
 import appointmentRouter from "./routes/appointmentRoutes.js";
+import galleryRouter from "./routes/galleryRoutes.js";
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/appointments", appointmentRouter);
+app.use("/gallery", galleryRouter);
 
 app.get("/test-db", async (req, res) => {
   try {
