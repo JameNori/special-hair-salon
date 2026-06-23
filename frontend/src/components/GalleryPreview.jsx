@@ -28,7 +28,7 @@ export default function GalleryPreview() {
   );
 
   return (
-    <section className="py-4 px-4 bg-salon-background">
+    <section id="gallery" className="py-4 px-4 bg-salon-background">
       <h2 className="text-2xl font-bold text-center text-salon-primary mb-8">
         ผลงานของเรา
       </h2>

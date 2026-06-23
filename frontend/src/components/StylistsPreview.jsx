@@ -31,7 +31,7 @@ const stylists = [
 
 export default function StylistsPreview() {
   return (
-    <section className="py-4 px-4 bg-salon-background">
+    <section id="stylists" className="py-4 px-4 bg-salon-background">
       <h2 className="text-2xl font-bold text-center text-salon-primary mb-8">
         ช่างของเรา
       </h2>

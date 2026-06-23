@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 function Hero() {
   return (
-    <section>
+    <section id="appointment">
       {/* Mobile layout */}
       <div className="md:hidden relative">
         <img

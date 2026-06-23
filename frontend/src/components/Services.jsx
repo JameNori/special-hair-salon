@@ -18,7 +18,7 @@ import {
   
   export default function Services() {
     return (
-      <section className="py-4 px-4 bg-salon-background">
+      <section id="services" className="py-4 px-4 bg-salon-background">
         <h2 className="text-2xl font-bold text-center text-salon-primary mb-8">
           บริการของเรา
         </h2>
