@@ -1,14 +1,23 @@
-import { Button } from "@/components/ui/button"
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import WhyChooseUs from "./components/WhyChooseUs";
+import Services from "./components/Services";
+import GalleryPreview from "./components/GalleryPreview";
+import StylistsPreview from "./components/StylistsPreview";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold text-blue-600 mb-4">
-        Hello Special Hair Salon
-      </h1>
-      <Button>คลิกที่นี่</Button>
+    <div>
+      <Navbar />
+      <Hero />
+      <WhyChooseUs />
+      <Services />
+      <GalleryPreview />
+      <StylistsPreview />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
