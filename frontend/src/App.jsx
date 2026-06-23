@@ -4,6 +4,7 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import Services from "./components/Services";
 import GalleryPreview from "./components/GalleryPreview";
 import StylistsPreview from "./components/StylistsPreview";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Services />
       <GalleryPreview />
       <StylistsPreview />
+      <Footer />
     </div>
   );
 }
