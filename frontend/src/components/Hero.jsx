@@ -15,11 +15,11 @@ function Hero() {
           <p className="text-sm text-salon-accent font-medium mb-2">
             ใส่ใจทุกทรงผม ใส่ใจทุกคน
           </p>
-          <h1 className="text-3xl font-bold text-salon-primary mb-3 leading-tight">
-            Special
-            <br />
-            Hair Salon
-          </h1>
+          <img
+            src="/logo.svg"
+            alt="Special Hair Salon"
+            className="h-20 w-fit mb-4"
+          />
           <p className="text-sm text-salon-secondary mb-6">
             ตัด สไตล์ และดูแลเส้นผม โดยทีมช่างมืออาชีพ เพราะผมที่ดี
             เริ่มจากการดูแลที่เข้าใจคุณ
@@ -54,11 +54,11 @@ function Hero() {
           <p className="text-sm text-salon-accent font-medium mb-2">
             ใส่ใจทุกทรงผม ใส่ใจทุกคน
           </p>
-          <h1 className="text-5xl font-bold text-salon-primary mb-3 leading-tight">
-            Special
-            <br />
-            Hair Salon
-          </h1>
+          <img
+            src="/logo.svg"
+            alt="Special Hair Salon"
+            className="h-28 w-fit mb-4"
+          />
           <p className="text-base text-salon-secondary mb-6">
             ตัด สไตล์ และดูแลเส้นผม โดยทีมช่างมืออาชีพ เพราะผมที่ดี
             เริ่มจากการดูแลที่เข้าใจคุณ

@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-salon-footer text-salon-footer-text">
       <div className="max-w-6xl mx-auto px-6 py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div className="flex flex-col gap-4">
-          <h3 className="text-white font-bold text-lg">Special Hair Salon</h3>
+        <img src="/logo-light.svg" alt="Special Hair Salon" className="h-12 lg:h-16 w-fit" />
           <p className="text-sm leading-relaxed">
             ใส่ใจทุกทรงผม ใส่ใจทุกคน ด้วยทีมช่างมืออาชีพและผลิตภัณฑ์คุณภาพ
             เพื่อเส้นผมที่สวยที่สุดของคุณ
