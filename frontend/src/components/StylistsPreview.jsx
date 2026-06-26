@@ -1,11 +1,10 @@
 import { stylists } from "../data/stylists";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function StylistsPreview() {
   return (
     <section id="stylists" className="py-4 px-4 bg-salon-background">
-      <h2 className="text-2xl font-bold text-center text-salon-primary mb-8">
-        ช่างของเรา
-      </h2>
+      <SectionHeading>ช่างของเรา</SectionHeading>
 
       <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6">
         {stylists.map((stylist) => (

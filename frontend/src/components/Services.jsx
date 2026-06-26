@@ -1,11 +1,10 @@
 import { services } from "../data/service";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function Services() {
   return (
     <section id="services" className="py-4 px-4 bg-salon-background">
-      <h2 className="text-2xl font-bold text-center text-salon-primary mb-8">
-        บริการของเรา
-      </h2>
+      <SectionHeading>บริการของเรา</SectionHeading>
 
       <div className="max-w-5xl mx-auto grid grid-cols-3 lg:grid-cols-6 gap-4">
         {services.map(({ icon: Icon, label }) => (

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { mockImages } from "../data/gallery";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 const tabs = ["ทั้งหมด", "ตัดผม", "ทำสีผม", "ดัดผม", "ยืดผม"];
 const tabLabels = {
@@ -19,9 +20,7 @@ export default function GalleryPreview() {
 
   return (
     <section id="gallery" className="py-4 px-4 bg-salon-background">
-      <h2 className="text-2xl font-bold text-center text-salon-primary mb-8">
-        ผลงานของเรา
-      </h2>
+      <SectionHeading>ผลงานของเรา</SectionHeading>
 
       {/* Filter Tabs */}
       <div className="flex justify-center gap-2 flex-wrap mb-8">
