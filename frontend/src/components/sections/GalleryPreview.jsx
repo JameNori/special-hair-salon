@@ -3,13 +3,6 @@ import { mockImages } from "../../data/gallery";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const tabs = ["ทั้งหมด", "ตัดผม", "ทำสีผม", "ดัดผม", "ยืดผม"];
-const tabLabels = {
-  ทั้งหมด: "ทั้งหมด",
-  ตัดผม: "ตัดผม",
-  ทำสีผม: "ทำสีผม",
-  ดัดผม: "ดัดผม",
-  ยืดผม: "ยืดผม",
-};
 
 export default function GalleryPreview() {
   const [activeTab, setActiveTab] = useState("ทั้งหมด");
@@ -35,7 +28,7 @@ export default function GalleryPreview() {
                       : "border border-salon-accent text-salon-accent hover:bg-salon-accent hover:text-salon-accent-foreground"
                   }`}
           >
-            {tabLabels[tab]}
+            {tab}{" "}
           </button>
         ))}
       </div>
