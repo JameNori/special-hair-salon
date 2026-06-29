@@ -1,4 +1,4 @@
-import { services } from "../data/service";
+import { services } from "../../data/service";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function Services() {

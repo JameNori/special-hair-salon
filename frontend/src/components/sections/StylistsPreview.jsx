@@ -1,4 +1,4 @@
-import { stylists } from "../data/stylists";
+import { stylists } from "../../data/stylists";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function StylistsPreview() {

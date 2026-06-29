@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { mockImages } from "../data/gallery";
+import { mockImages } from "../../data/gallery";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const tabs = ["ทั้งหมด", "ตัดผม", "ทำสีผม", "ดัดผม", "ยืดผม"];
