@@ -1,24 +1,8 @@
 import { useState } from "react";
-
-const mockImages = [
-  { id: 1, src: "/mock-gallery-1.png", category: "ตัดผม" },
-  { id: 2, src: "/mock-gallery-2.png", category: "ตัดผม" },
-  { id: 3, src: "/mock-gallery-3.png", category: "ตัดผม" },
-  { id: 4, src: "/mock-gallery-4.png", category: "ทำสีผม" },
-  { id: 5, src: "/mock-gallery-5.png", category: "ทำสีผม" },
-  { id: 6, src: "/mock-gallery-6.png", category: "ทำสีผม" },
-  { id: 7, src: "/mock-gallery-7.png", category: "ดัดผม" },
-  { id: 8, src: "/mock-gallery-8.png", category: "ยืดผม" },
-];
+import { mockImages } from "../../data/gallery";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 const tabs = ["ทั้งหมด", "ตัดผม", "ทำสีผม", "ดัดผม", "ยืดผม"];
-const tabLabels = {
-  ทั้งหมด: "ทั้งหมด",
-  ตัดผม: "ตัดผม",
-  ทำสีผม: "ทำสีผม",
-  ดัดผม: "ดัดผม",
-  ยืดผม: "ยืดผม",
-};
 
 export default function GalleryPreview() {
   const [activeTab, setActiveTab] = useState("ทั้งหมด");
@@ -29,9 +13,7 @@ export default function GalleryPreview() {
 
   return (
     <section id="gallery" className="py-4 px-4 bg-salon-background">
-      <h2 className="text-2xl font-bold text-center text-salon-primary mb-8">
-        ผลงานของเรา
-      </h2>
+      <SectionHeading>ผลงานของเรา</SectionHeading>
 
       {/* Filter Tabs */}
       <div className="flex justify-center gap-2 flex-wrap mb-8">
@@ -46,7 +28,7 @@ export default function GalleryPreview() {
                       : "border border-salon-accent text-salon-accent hover:bg-salon-accent hover:text-salon-accent-foreground"
                   }`}
           >
-            {tabLabels[tab]}
+            {tab}{" "}
           </button>
         ))}
       </div>
