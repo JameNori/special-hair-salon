@@ -15,10 +15,10 @@ app.get("/", (req, res) => {
   res.json({ message: "Special Hair Salon API is running!" });
 });
 
-app.use("/appointments", appointmentRouter);
-app.use("/gallery", galleryRouter);
-app.use("/stylists", stylistRouter);
-app.use("/auth", authRouter);
+app.use("/api/appointments", appointmentRouter);
+app.use("/api/gallery", galleryRouter);
+app.use("/api/stylists", stylistRouter);
+app.use("/api/auth", authRouter);
 
 app.get("/test-db", async (req, res) => {
   try {
