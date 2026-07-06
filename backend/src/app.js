@@ -5,6 +5,7 @@ import appointmentRouter from "./routes/appointmentRoutes.js";
 import galleryRouter from "./routes/galleryRoutes.js";
 import stylistRouter from "./routes/stylistRoutes.js";
 import authRouter from "./routes/authRoutes.js";
+import { handleServerError } from "./utils/handleServerError.js";
 
 const app = express();
 
@@ -26,8 +27,7 @@ app.get("/test-db", async (req, res) => {
     console.log("result:", result);
     res.json({ time: result.rows[0].now });
   } catch (error) {
-    console.error("Database error:", error.message);
-    res.status(500).json({ errror: error.message });
+    handleServerError(res, error, "test-db");
   }
 });
 export default app;

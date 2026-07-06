@@ -1,5 +1,6 @@
 import pool from "../../db/db.js";
 import jwt from "jsonwebtoken";
+import { handleServerError } from "../utils/handleServerError.js";
 
 export const protectAdmin = async (req, res, next) => {
   try {
@@ -27,6 +28,6 @@ export const protectAdmin = async (req, res, next) => {
       error.name === "TokenExpiredError"
     )
       return res.status(401).json({ message: "Unauthorized" });
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "protectAdmin");
   }
 };

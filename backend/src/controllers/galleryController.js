@@ -1,4 +1,5 @@
 import pool from "../../db/db.js";
+import { handleServerError } from "../utils/handleServerError.js";
 
 export const getAllGallery = async (req, res) => {
   try {
@@ -14,7 +15,7 @@ export const getAllGallery = async (req, res) => {
     const result = await pool.query("SELECT * FROM gallery");
     res.status(200).json(result.rows);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "getAllGallery");
   }
 };
 
@@ -28,7 +29,7 @@ export const getGalleryById = async (req, res) => {
       return res.status(404).json({ message: "Gallery not found" });
     res.status(200).json(result.rows[0]);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "getGalleryById");
   }
 };
 
@@ -41,7 +42,7 @@ export const createGallery = async (req, res) => {
     );
     res.status(201).json(result.rows[0]);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "createGallery");
   }
 };
 
@@ -57,7 +58,7 @@ export const updateGallery = async (req, res) => {
       return res.status(404).json({ message: "Gallery not found" });
     res.status(200).json(result.rows[0]);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "updateGallery");
   }
 };
 
@@ -72,6 +73,6 @@ export const deleteGallery = async (req, res) => {
       return res.status(404).json({ message: "Gallery not found" });
     res.status(200).json({ message: "Gallery deleted successfully" });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "deleteGallery");
   }
 };
