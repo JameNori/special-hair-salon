@@ -1,4 +1,5 @@
 import pool from "../../db/db.js";
+import { handleServerError } from "../utils/handleServerError.js";
 
 export const getAllStylists = async (req, res) => {
   try {
@@ -13,7 +14,7 @@ export const getAllStylists = async (req, res) => {
     const result = await pool.query("SELECT * FROM stylists");
     res.status(200).json(result.rows);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "getAllStylists");
   }
 };
 
@@ -27,7 +28,7 @@ export const getStylistById = async (req, res) => {
       return res.status(404).json({ message: "Stylist not found" });
     return res.status(200).json(result.rows[0]);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "getStylistById");
   }
 };
 
@@ -40,7 +41,7 @@ export const createStylist = async (req, res) => {
     );
     res.status(201).json(result.rows[0]);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "createStylist");
   }
 };
 
@@ -56,7 +57,7 @@ export const updateStylist = async (req, res) => {
       return res.status(404).json({ message: "Stylist not found" });
     res.status(200).json(result.rows[0]);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "updateStylist");
   }
 };
 
@@ -71,6 +72,6 @@ export const deleteStylist = async (req, res) => {
       return res.status(404).json({ message: "Stylist not found" });
     res.status(200).json({ message: "Stylist deleted successfully" });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "deleteStylist");
   }
 };

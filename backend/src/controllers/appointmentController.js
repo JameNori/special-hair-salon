@@ -1,4 +1,5 @@
 import pool from "../../db/db.js";
+import { handleServerError } from "../utils/handleServerError.js";
 
 export const getAllAppointments = async (req, res) => {
   try {
@@ -14,7 +15,7 @@ export const getAllAppointments = async (req, res) => {
     const result = await pool.query("SELECT * FROM appointments");
     res.status(200).json(result.rows);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "getAllAppointments");
   }
 };
 
@@ -29,7 +30,7 @@ export const getAppointmentById = async (req, res) => {
       return res.status(404).json({ message: "Appointment not found" });
     res.status(200).json(result.rows[0]);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "getAppointmentById");
   }
 };
 
@@ -51,7 +52,7 @@ export const createAppointment = async (req, res) => {
     );
     res.status(201).json(result.rows[0]);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "createAppointment");
   }
 };
 
@@ -76,7 +77,7 @@ export const updateAppointment = async (req, res) => {
       return res.status(404).json({ message: "Appointment not found" });
     res.status(200).json(result.rows[0]);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "updateAppointment");
   }
 };
 
@@ -91,6 +92,6 @@ export const deleteAppointment = async (req, res) => {
       return res.status(404).json({ message: "Appointment not found" });
     res.status(200).json({ message: "Appointment deleted successfully" });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "deleteAppointment");
   }
 };

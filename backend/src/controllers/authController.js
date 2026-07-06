@@ -1,6 +1,7 @@
 import pool from "../../db/db.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { handleServerError } from "../utils/handleServerError.js";
 
 export const register = async (req, res) => {
   try {
@@ -21,7 +22,7 @@ export const register = async (req, res) => {
     );
     res.status(201).json({ message: "Register successfully" });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "register");
   }
 };
 
@@ -49,7 +50,7 @@ export const login = async (req, res) => {
     );
     res.status(200).json({ message: "Login successfully", token });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "login");
   }
 };
 
@@ -79,6 +80,6 @@ export const getMe = async (req, res) => {
       error.name === "TokenExpiredError"
     )
       return res.status(401).json({ message: "Unauthorized" });
-    res.status(500).json({ message: error.message });
+    handleServerError(res, error, "getMe");
   }
 };
