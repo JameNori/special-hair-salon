@@ -10,9 +10,11 @@
   --color-salon-secondary: #a8917d;
   --color-salon-background: #faf5ef;
   --color-salon-accent: #c1714a;
-  --color-salon-accent-foreground: #FAF5EF;
+  --color-salon-accent-foreground: #faf5ef;
   --color-salon-footer: #3f4a3d;
   --color-salon-footer-text: #c9d1c5;
+  --color-salon-dark: #3f4a3d;
+  --color-salon-dark-text: #c9d1c5;
   --font-heading: var(--font-sans);
   --font-sans: "Geist Variable", sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
