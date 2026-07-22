@@ -8,16 +8,27 @@ CREATE TABLE users (
   created_at TIMESTAMP DEFAULT NOW()
 );
 
+CREATE TABLE customers (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  phone VARCHAR(20),
+  email VARCHAR(255) UNIQUE,
+  password VARCHAR(255),
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
 CREATE TABLE stylists (
   id SERIAL PRIMARY KEY,
   name VARCHAR(50) NOT NULL,
   bio VARCHAR(255) NOT NULL,
+  specialty VARCHAR(255),
   profile_pic TEXT,
   created_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE appointments (
   id SERIAL PRIMARY KEY,
+  customer_id INT REFERENCES customers(id),
   stylist_id INT REFERENCES stylists(id),
   customer_name VARCHAR(50),
   phone VARCHAR(20),
@@ -33,6 +44,7 @@ CREATE TABLE gallery (
   id SERIAL PRIMARY KEY,
   stylist_id INT REFERENCES stylists(id),
   image_url TEXT,
+  category VARCHAR(50),
   description VARCHAR(255),
   created_at TIMESTAMP DEFAULT NOW()
 );
